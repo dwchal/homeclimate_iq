@@ -10,6 +10,7 @@ A comprehensive multi-sensor correlation tool that integrates data from various 
 - **Real-time Monitoring**: Continuous data collection and storage
 - **Beautiful Dashboards**: Visualize your data with Grafana and custom web interfaces
 - **Actionable Insights**: Automated recommendations based on data analysis
+- **Utility CSV Quick Report**: Generate daily usage/cost summaries from exported utility CSV files
 
 ## Supported Devices
 
@@ -56,6 +57,16 @@ docker-compose up -d
 - **Grafana Dashboard**: http://localhost:3000 (default: admin/admin)
 - **InfluxDB**: http://localhost:8086
 - **API Documentation**: http://localhost:8000/docs
+
+## Utility CSV Quick Report
+
+A new CLI utility can summarize daily kWh and cost values from common utility CSV export formats:
+
+```bash
+python -m src.analysis.utility_csv_report ./data/raw/utility_data.csv
+```
+
+The report includes per-day totals, overall totals, and the peak-usage day.
 
 ## Architecture
 
